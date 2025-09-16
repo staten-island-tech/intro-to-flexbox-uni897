@@ -1,28 +1,122 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+
+  <body>
     <h1>Items to buy</h1>
     <section class="container">
-        <div class="card">
-            <img class="img" src="https://images.macrumors.com/t/B-OH6huBi4ps9IbiRKadZxSPmP4=/800x0/smart/article-new/2025/09/iphone-17-models.jpg?lossy" alt="iPhone 17">
-            <h2>iPhone 17</h2>
-            <p>$999.99</p>
-        </div>
-        <div class="card">
-            <img class="img" src="https://images.macrumors.com/t/B-OH6huBi4ps9IbiRKadZxSPmP4=/800x0/smart/article-new/2025/09/iphone-17-models.jpg?lossy" alt="iPhone 17">
-            <h2>iPhone 17</h2>
-            <p>$999.99</p>
-        </div>
-        <div class="card">
-            <img class="img" src="https://images.macrumors.com/t/B-OH6huBi4ps9IbiRKadZxSPmP4=/800x0/smart/article-new/2025/09/iphone-17-models.jpg?lossy" alt="iPhone 17">
-            <h2>iPhone 17</h2>
-            <p>$999.99</p>
-        </div>
+      <div class="card">
+        <img
+          class="img"
+          src="https://images.macrumors.com/t/B-OH6huBi4ps9IbiRKadZxSPmP4=/800x0/smart/article-new/2025/09/iphone-17-models.jpg?lossy"
+          alt="iPhone 17"
+        />
+        <h2>iPhone 17</h2>
+        <p>$999.99</p>
+      </div>
+      <div class="card">
+        <img
+          class="img"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQi3XMQi6jNk0atnrCnCuJm_UU6qOsyLZ1Orw&s"
+          alt="iPad 10th Gen"
+        />
+        <h2>iPad 10th Gen</h2>
+        <p>$299.99</p>
+      </div>
+      <div class="card">
+        <img
+          class="img"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyMMbLzKIHJpq2q2bUZq197DLbz3rCZ4rqaw&s"
+          alt="iPhone 16"
+        />
+        <h2>iPhone 16</h2>
+        <p>$899.99</p>
+      </div>
+      <div class="card">
+        <img
+          class="img"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThm3TqOezk-JK4R__TPS3tqlRW1Tsn6nqMgg&s"
+          alt="iPhone 15"
+        />
+        <h2>iPhone 15</h2>
+        <p>$599.99</p>
+      </div>
+      <div class="card">
+        <img
+          class="img"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUsAAACYCAMAAABatDuZAAAAY1BMVEX////x8fH09PT6+vrb29vDw8PT09Pz8/P39/fg4ODv7+/f39/s7Ozj4+Pp6enX19fJycnIyMi9vb23t7empqh/f4Gfn6GTk5VnaGuvsLOoqKqNjY+goKHPz9GIiIlsbXKZmZn5NgmOAAAC3ElEQVR4nO3XC3OiMBSGYZOAiQESLvaila3//1duIKhoQdxtd2anfZ9pQbnqNycnuFoBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPCvKCN1RwzsaHlafcYnL6GH/4k905sfZ3tL99fmoRiNtLnLrdBjUsZldH6lx1v/zPRpCxfTN6+m7j7+0PJmOdozcfEP3/POBxFWL1RjF2PI0QopDe7SIp+NUVkX5Hko4CFIhXmhB9qJMJWxrvBF3tWj0EOSiijvM1Lk9jpH4YqiCAWZeS3EuVeYcOTN/DDuyOPebK+mpYVWfqep3+75eOjijHDPwsmnKSuuzdQEpkeTcZh7lBG5U6cYdR5z7AuySOTlBN1l/gWz9X9NzzKNiHPRcFw/2Zo+SX1K1BojrIvzj9pkmxBkHke2FVl2VXn5d09yIsu4SQhZNq182qZhGJvuT6UHmT6/OCWVuhxrpbUudsxN1mfZTzd5mLyTJL+w+ffOcr4k+6p8fd2Z/eq42/q3Q7s7VNu9SV1b/0qOx8upQobYiphl630S8gyB9rx3p2D7NEc3XLj3Y77kInPX/tzp8mqlTf3+/qKe9sVb2m7VfruSz3tVHRtXl4kvTwfL0AZDi4ztslhXZble+0G57lN1Ay3i0+3yU+s39PRrG+pytdv7rdk1h3If6jJTrtHH4yUQ4VyRucsvHOfLOk2rEGqZVj5J+nHfc6HZ/tjn9e5pexX65CosVbfsVt0zYnhxFooy8+L66VJkbd00dVO1XZEmfaBBmJYebTA/RFeM5zdhfG8yv5760eN8uq7Tqgx5xkAvslO638jcFxpvvzqmuNHtTtalm8hyGPFJGQZ8OQR6liDp6ikYvfd+nfq5KCNd+HLooG2XKWa0Vb0QZRzxNszxdS/FpBBNaZeTPA950ffX68pGlJ1/iQMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8Nd+A7Vmb5JkQ5fbAAAAAElFTkSuQmCC"
+          alt="Apple Pencil"
+        />
+        <h2>Apple Pencil</h2>
+        <p>$79</p>
+      </div>
+      <div class="card">
+        <img
+          class="img"
+          src="https://media.wired.com/photos/671577232009d044328f83e0/master/w_1920,c_limit/AirPods%20Pro%202%20Abstract%20Background%20102024%20SOURCE%20Apple.jpg"
+          alt="AirPods"
+        />
+        <h2>AirPods</h2>
+        <p>$129.99</p>
+      </div>
+      <div class="card">
+        <img
+          class="img"
+          src="https://images.macrumors.com/t/B-OH6huBi4ps9IbiRKadZxSPmP4=/800x0/smart/article-new/2025/09/iphone-17-models.jpg?lossy"
+          alt="AirPods Max"
+        />
+        <h2>AirPods Max</h2>
+        <p>$249</p>
+      </div>
+      <div class="card">
+        <img
+          class="img"
+          src="https://images.macrumors.com/t/B-OH6huBi4ps9IbiRKadZxSPmP4=/800x0/smart/article-new/2025/09/iphone-17-models.jpg?lossy"
+          alt="iPhone 17"
+        />
+        <h2>iPhone 17</h2>
+        <p>$299.99</p>
+      </div>
+      <div class="card">
+        <img
+          class="img"
+          src="https://images.macrumors.com/t/B-OH6huBi4ps9IbiRKadZxSPmP4=/800x0/smart/article-new/2025/09/iphone-17-models.jpg?lossy"
+          alt="iPhone 17"
+        />
+        <h2>iPhone 17</h2>
+        <p>$299.99</p>
+      </div>
+      <div class="card">
+        <img
+          class="img"
+          src="https://images.macrumors.com/t/B-OH6huBi4ps9IbiRKadZxSPmP4=/800x0/smart/article-new/2025/09/iphone-17-models.jpg?lossy"
+          alt="iPhone 17"
+        />
+        <h2>iPhone 17</h2>
+        <p>$299.99</p>
+      </div>
+      <div class="card">
+        <img
+          class="img"
+          src="https://images.macrumors.com/t/B-OH6huBi4ps9IbiRKadZxSPmP4=/800x0/smart/article-new/2025/09/iphone-17-models.jpg?lossy"
+          alt="iPhone 17"
+        />
+        <h2>iPhone 17</h2>
+        <p>$299.99</p>
+      </div>
+      <div class="card">
+        <img
+          class="img"
+          src="https://images.macrumors.com/t/B-OH6huBi4ps9IbiRKadZxSPmP4=/800x0/smart/article-new/2025/09/iphone-17-models.jpg?lossy"
+          alt="iPhone 17"
+        />
+        <h2>iPhone 17</h2>
+        <p>$299.99</p>
+      </div>
     </section>
-</body>
+  </body>
 </html>
