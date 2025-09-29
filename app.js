@@ -64,7 +64,7 @@ const citizen = true;
 if (age === true || citizen === true){
     console.log("You can run for president");
 }
-*/
+
 
 function enterCastle(key, magicpowers, isBanned){
     if ((key || magicpowers) && !isBanned){
@@ -75,3 +75,21 @@ function enterCastle(key, magicpowers, isBanned){
 }
 
 enterCastle(true, true, true);
+
+const students = ["Owen", "Michael", "John", "Mary"];
+function printAll(list){
+    for (let i = 0; i < list.length; i++){
+        console.log(i)
+        console.log(list[i]);
+    }
+}
+
+printAll(students);
+
+students.forEach((student, index) => console.log(index, student));
+
+console.log(students.find((student) => student === "Owen"));
+const numbs = [1,2,3,4,5,6,7,8,9,10];
+numbs.filter((num) => num % 2 === 0).forEach((n) => console.log(n));
+
+*/
