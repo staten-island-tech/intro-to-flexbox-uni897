@@ -24,15 +24,38 @@ function isTelemarketer(num1, num2, num3, num4) {
 isTelemarketer(8, 7, 6, 9)
 */
 
-const string = "The red cat sat on the mat. Why are you so sad cat? Don't ask that.";
+const string = "Lorsque j'avais six ans j'ai vu, une fois, une magnifique image, dans un livre";
 
-function countLetters(list){
+function isFrench(list){
+    let tcount = 0;
+    let scount = 0;
     for (let i = 0; i < list.length; i++){
-        let tcount = 0;
-        let scount = 0;
-        if list[i] === "t" || list[i] === "T"{
-
+        const newstring = [...list]
+        tcount = newstring.filter((lt) => lt === 't' || lt === 'T').length;
+        scount = newstring.filter((lt) => lt === 's' || lt === 'S').length;
     }
+    if(tcount <= scount){
+        return "French";
+    }
+    return "English";
 }
 
-countLetters(string);
+//console.log(isFrench(string));
+
+const day1 = "CC..C"
+const day2 = ".CC.."
+
+function notOpen(day1, day2){
+    let index = []
+    for (let i = 0; i < day1.length; i++){
+        if (day1[i] === 'C' && day2[i] === 'C'){
+            index.push(i)
+        }
+    }
+    if(index.length > 0){
+        console.log(index.length+" space(s) occupied for both days")
+    }else{
+        console.log("No spaces were occupied for both days")
+    }
+}
+notOpen(day1, day2)
