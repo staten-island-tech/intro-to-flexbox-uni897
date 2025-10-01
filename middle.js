@@ -58,4 +58,4 @@ function notOpen(day1, day2){
         console.log("No spaces were occupied for both days")
     }
 }
-notOpen(day1, day2)
+notOpen(day1, day2);
