@@ -58,4 +58,18 @@ function notOpen(day1, day2){
         console.log("No spaces were occupied for both days")
     }
 }
-notOpen(day1, day2);
+//notOpen(day1, day2);
+
+duels = ["A", "B", "A", "B", "C", "D", "G"]
+
+function dueling(list){
+    let elder = list[0]
+    for(let i = 1; i < list.length; i = i + 2){
+        if(elder === list[i + 1] && list.length != i){
+            elder = list[i]
+            console.log(elder)
+        }
+    }
+}
+
+dueling(duels)
