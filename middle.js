@@ -103,16 +103,15 @@ books.forEach(title => {
 
 books.filter(book => book.year < 2020).forEach(book => console.log(book.title, book.year))
 */
-const btn = document.querySelector(".button")
+const btn = document.querySelector(".btn")
 console.log(btn)
 
 function getrgb() {
+    const box = document.querySelector(".box")
     let r = Math.floor(Math.random() * 256)
     let g = Math.floor(Math.random() * 256)
     let b = Math.floor(Math.random() * 256)
-    box.computedStyleMap.backgroundColor = `rgb(${r}, ${g}, ${b})`
-    const box = document.getElementById('box');
-    box.style.colo
+    box.style.backgroundColor = `rgb(${r}, ${g}, ${b})`
 }
 
 btn.addEventListener("click", getrgb)
