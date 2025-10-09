@@ -21,15 +21,21 @@ const items = [
     {item: "Macbook Desktop", price: 1299.99, type: "Computer", img: "https://images.techadvisor.com/cmsdata/reviews/3782193/imac_pro_2017.png"},
 ]
 
-function inject(card) {
-  DOMSelectors.display.insertAdjacentHTML(
-    "afterbegin",
-    `<div class="display-card">
-      <img class="display-img" src="${card.url}"/>
-      <h2 class="display-artist">${card.artist}</h2>
-      <h3 class="display-album">${card.title}</h3>
-      <button class="remove btn">Remove Album</button>
-    </div>`
-  );
+function inject(item){
+  const container = document.querySelector(".container")
+  container.insertAdjacentHTML(
+    "afterbegin", 
+    `<div class="card">
+        <img
+          class="img"
+          src="${item.img}"
+          alt="${item.item}"
+        />
+        <h2>${item.item}</h2>
+        <p>${item.price}</p>
+        <button>Remove Album</button>
+      </div>`)
 }
 
+
+items.forEach((item) => inject(item))
