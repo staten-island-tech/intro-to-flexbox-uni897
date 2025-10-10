@@ -21,20 +21,34 @@ const items = [
     {item: "Airpod Pro", price: 249, type: "Audio", img: "https://gizmodo.com/app/uploads/2022/09/330e0708d62e77a10e692e275ee80a83.jpg"},
 ]
 
-function inject(item){
+function inject(item, id){
   const container = document.querySelector(".container")
   container.insertAdjacentHTML(
     "afterbegin", 
-    `<div class="card">
+    `<div class="card" data-id = ${id}>
         <img
           class="img"
           src="${item.img}"
           alt="${item.item}"
         />
         <h2>${item.item}</h2>
-        <p>${item.price}</p>
-        <button>Remove Album</button>
+        <p>$${item.price}</p>
+        <button class = "cart">Add to cart</button>
       </div>`)
 }
 
-items.forEach((item) => inject(item));
+let id = 0
+//change this from a for each into a for loop so the id can better work.
+items.forEach((item) => inject(item, id), id ++);
+
+function getCards(){
+  const buttons = document.querySelectorAll("button")
+  const btnArr = Array.from(buttons)
+  btnArr.forEach(btn =>
+    btn.addEventListener("click", function (event){
+      //console.log(event.target)
+      console.log(event.target.closest('.card').getAttribute("data-id"))
+    })
+  )
+}
+getCards()
