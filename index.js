@@ -37,5 +37,4 @@ function inject(item){
       </div>`)
 }
 
-
-items.forEach((item) => inject(item))
+items.forEach((item) => inject(item));
