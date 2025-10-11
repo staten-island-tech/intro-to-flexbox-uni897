@@ -45,6 +45,7 @@ h1 {
 
 .tab{
   margin-right: 1%;
+  cursor: pointer;
 }
 
 .container {
