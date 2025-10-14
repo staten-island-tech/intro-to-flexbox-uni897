@@ -33,7 +33,7 @@ function inject(item){
         />
         <h2>${item.item}</h2>
         <p>$${item.price}</p>
-        <button class = "cart">Add to cart</button>
+        <button class = "add">Add to cart</button>
       </div>`)
 }
 

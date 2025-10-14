@@ -48,6 +48,10 @@ h1 {
   cursor: pointer;
 }
 
+.add{
+  cursor: pointer;
+}
+
 .container {
   width: 90vw;
   margin: 50px auto;
