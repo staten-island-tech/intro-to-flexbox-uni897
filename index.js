@@ -62,7 +62,9 @@ function getCards(){
   const btnArr = Array.from(buttons)
   btnArr.forEach(btn =>
     btn.addEventListener("click", function (event){
-      //console.log(event.target.closest('.card').getAttribute("data-id"))
+      const id = event.target.closest('.card').getAttribute("data-id")
+      const card = items.find(item => item.id == id)
+      console.log(card.price)
     })
   )
 }
