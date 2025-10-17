@@ -18,6 +18,12 @@ h1 {
   font-family: Bad Script, cursive;
 }
 
+.cart{
+  width: 500px auto;
+  height: 500px auto;
+  background-color: white;
+}
+
 .card {
   width: 30%;
   height: auto;

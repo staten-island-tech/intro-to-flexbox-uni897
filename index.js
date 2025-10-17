@@ -21,6 +21,29 @@ const items = [
     {item: "Airpod Pro", id: 20, price: 249, type: "audio", img: "https://gizmodo.com/app/uploads/2022/09/330e0708d62e77a10e692e275ee80a83.jpg"},
 ]
 
+let itemcart = []
+
+function injectCart(item){
+  const container = document.querySelector(".container")
+  if(item){
+    container.insertAdjacentHTML(
+      "afterbegin",
+      `<div class="cart" data-id = ${item.id}>
+          <h2>${item.item}</h2>
+          <p>$${item.price}</p>
+        </div>`
+    )
+  }else{
+    container.insertAdjacentHTML(
+      "afterbegin",
+      `<div class="cart" data-id = null>
+          <h2>No items</h2>
+          <p>No price</p>
+        </div>`
+    )
+  }
+}
+injectCart()
 function inject(item){
   const container = document.querySelector(".container")
   container.insertAdjacentHTML(
@@ -45,11 +68,15 @@ function filterCard(){
   tabs.forEach(tab =>{
     tab.addEventListener("click", () => {
       document.querySelectorAll(".card").forEach(card => card.remove())
+      document.querySelectorAll(".cart").forEach(cart => cart.remove())
 
       const type = tab.getAttribute("data-category")
       if(type !== "all"){
         const filtered = items.filter(item => item.type === type)
         filtered.forEach(item => inject(item))
+      }else if(type == "cart"){
+        console.log("cart")
+        itemcart.forEach(item => injectCart(item))
       }else{
         items.forEach((item) => inject(item))
       }
@@ -64,7 +91,8 @@ function getCards(){
     btn.addEventListener("click", function (event){
       const id = event.target.closest('.card').getAttribute("data-id")
       const card = items.find(item => item.id == id)
-      console.log(card.price)
+      itemcart.push(card)
+      console.log("hi", itemcart)
     })
   )
 }
