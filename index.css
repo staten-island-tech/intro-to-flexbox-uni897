@@ -19,9 +19,12 @@ h1 {
 }
 
 .cart{
-  width: 500px auto;
-  height: 500px auto;
+  width: 30%;
+  height: 400px;
   background-color: white;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 10px;
 }
 
 .card {

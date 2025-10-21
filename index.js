@@ -24,26 +24,13 @@ const items = [
 let itemcart = []
 
 function injectCart(item){
-  const container = document.querySelector(".container")
-  if(item){
-    container.insertAdjacentHTML(
-      "afterbegin",
-      `<div class="cart" data-id = ${item.id}>
-          <h2>${item.item}</h2>
-          <p>$${item.price}</p>
-        </div>`
-    )
-  }else{
-    container.insertAdjacentHTML(
-      "afterbegin",
-      `<div class="cart" data-id = null>
-          <h2>No items</h2>
-          <p>No price</p>
-        </div>`
-    )
-  }
+  const container = document.querySelector(".cart")
+  container.insertAdjacentElement(
+    "afterbegin",
+    `<p>${item.item}</p>`
+  )
 }
-injectCart()
+
 function inject(item){
   const container = document.querySelector(".container")
   container.insertAdjacentHTML(
@@ -68,15 +55,11 @@ function filterCard(){
   tabs.forEach(tab =>{
     tab.addEventListener("click", () => {
       document.querySelectorAll(".card").forEach(card => card.remove())
-      document.querySelectorAll(".cart").forEach(cart => cart.remove())
 
       const type = tab.getAttribute("data-category")
       if(type !== "all"){
         const filtered = items.filter(item => item.type === type)
         filtered.forEach(item => inject(item))
-      }else if(type == "cart"){
-        console.log("cart")
-        itemcart.forEach(item => injectCart(item))
       }else{
         items.forEach((item) => inject(item))
       }
