@@ -25,9 +25,14 @@ let itemcart = []
 
 function injectCart(item){
   const container = document.querySelector(".cart")
-  container.insertAdjacentElement(
+  console.log(item.id)
+  const amount = itemcart.filter((card) => card.id === item.id).length
+  console.log(amount)
+  container.insertAdjacentHTML(
     "afterbegin",
-    `<p>${item.item}</p>`
+    `<div>
+      <p>${item.item}: $${item.price * amount}, ${amount}x</p>
+    </div>`
   )
 }
 
@@ -75,7 +80,7 @@ function getCards(){
       const id = event.target.closest('.card').getAttribute("data-id")
       const card = items.find(item => item.id == id)
       itemcart.push(card)
-      console.log("hi", itemcart)
+      injectCart(card)
     })
   )
 }
