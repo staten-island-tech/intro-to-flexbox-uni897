@@ -86,6 +86,7 @@ function getCards(){
       const id = event.target.closest('.card').getAttribute("data-id")
       const card = items.find(item => item.id == id)
       itemcart.push(card)
+      console.log("No id")
       injectCart()
     })
   )
