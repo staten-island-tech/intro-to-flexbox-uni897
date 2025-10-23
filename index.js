@@ -29,17 +29,21 @@ function injectCart(){
 
   const container = document.querySelector(".items")
   let usedIds = []
+  const total = 0 
+  itemcart.forEach(cartitem => console.log(total + cartitem.price))
+  console.log(total)
+  
   itemcart.forEach(item => {
     const amount = itemcart.filter((card) => card.id === item.id).length
 
     if(!usedIds.includes(item.id)){
-    container.insertAdjacentHTML(
-    "afterbegin",
-    `<div class = 'items'>
-      <div class = cart-items> <p>${item.item}: $${item.price}, ${amount}x </p> </div>
-    </div>`)
-    usedIds.push(item.id)
-    }
+      container.insertAdjacentHTML(
+      "afterbegin",
+      `<div class = 'items'>
+        <div class = cart-items> <p>${item.item}: $${item.price}, ${amount}x </p> </div>
+      </div>`)
+      usedIds.push(item.id)
+    } 
 })}
 
 function inject(item){
@@ -86,7 +90,6 @@ function getCards(){
       const id = event.target.closest('.card').getAttribute("data-id")
       const card = items.find(item => item.id == id)
       itemcart.push(card)
-      console.log("No id")
       injectCart()
     })
   )
