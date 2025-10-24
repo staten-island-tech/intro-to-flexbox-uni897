@@ -20,7 +20,7 @@ h1 {
 
 .cart{
   width: 30%;
-  height: 400px;
+  height: auto;
   background-color: white;
   font-weight: bold;
   text-align: center;

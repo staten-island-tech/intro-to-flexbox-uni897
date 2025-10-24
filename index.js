@@ -22,6 +22,7 @@ const items = [
 ]
 
 let itemcart = []
+let total = 0
 
 function injectCart(){
   const allItems = document.querySelectorAll(".cart-items")
@@ -29,13 +30,13 @@ function injectCart(){
 
   const container = document.querySelector(".items")
   let usedIds = []
-  const total = 0 
-  itemcart.forEach(cartitem => console.log(total + cartitem.price))
+  const totalText = document.querySelector(".total")
+  itemcart.forEach(cartitem => total += cartitem.price)
   console.log(total)
   
   itemcart.forEach(item => {
     const amount = itemcart.filter((card) => card.id === item.id).length
-
+    totalText.textContent = "Total: $"+total
     if(!usedIds.includes(item.id)){
       container.insertAdjacentHTML(
       "afterbegin",
