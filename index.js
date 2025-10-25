@@ -31,11 +31,10 @@ function injectCart(){
   const container = document.querySelector(".items")
   let usedIds = []
   const totalText = document.querySelector(".total")
-  itemcart.forEach(cartitem => total += cartitem.price)
   
   itemcart.forEach(item => {
     const amount = itemcart.filter((card) => card.id===item.id).length
-    totalText.textContent = "Total: $"+total
+    totalText.textContent = "Total: $"+total.toFixed(2)
     if(!usedIds.includes(item.id)){
       container.insertAdjacentHTML(
       "afterbegin",
@@ -69,16 +68,19 @@ function filterCard(){
   const tabs = document.querySelectorAll("[data-category]")
   tabs.forEach(tab =>{
     tab.addEventListener("click", () =>{
-      //document.querySelectorAll(".card").forEach(card => card.remove())
-
       const type = tab.getAttribute("data-category")
+      const allCards = Array.from(document.querySelectorAll(".card"))
+
       if(type !== "all"){
-        //const filtered = items.filter(item => item.type === type)
-        const filtered = document.querySelectorAll(`[data-type=${type}]`)
-        //filtered.forEach(item => document.getElementById(item).style.display = 'none')
-        //filtered.forEach(item => inject(item))
+        allCards.forEach(card =>{
+          if(card.getAttribute("data-type") === type){
+            card.style.display=''
+          }else{
+            card.style.display='none'
+          }
+        })
       }else{
-        items.forEach((item) => inject(item))
+        allCards.forEach(item => item.style.display='')
       }
     })
   })
@@ -92,6 +94,7 @@ function getCards(){
       const id = event.target.closest('.card').getAttribute("data-id")
       const card = items.find(item => item.id == id)
       itemcart.push(card)
+      total += card.price
       injectCart()
     })
   )
