@@ -32,16 +32,15 @@ function injectCart(){
   let usedIds = []
   const totalText = document.querySelector(".total")
   itemcart.forEach(cartitem => total += cartitem.price)
-  console.log(total)
   
   itemcart.forEach(item => {
-    const amount = itemcart.filter((card) => card.id === item.id).length
+    const amount = itemcart.filter((card) => card.id===item.id).length
     totalText.textContent = "Total: $"+total
     if(!usedIds.includes(item.id)){
       container.insertAdjacentHTML(
       "afterbegin",
-      `<div class = 'items'>
-        <div class = cart-items> <p>${item.item}: $${item.price}, ${amount}x </p> </div>
+      `<div class='items'>
+        <div class=cart-items> <p>${item.item}: $${item.price}, ${amount}x </p> </div>
       </div>`)
       usedIds.push(item.id)
     } 
@@ -51,7 +50,7 @@ function inject(item){
   const container = document.querySelector(".container")
   container.insertAdjacentHTML(
     "afterbegin", 
-    `<div class="card" data-id = ${item.id}>
+    `<div class="card" data-id=${item.id} data-type=${item.type}>
         <img
           class="img"
           src="${item.img}"
@@ -59,7 +58,7 @@ function inject(item){
         />
         <h2>${item.item}</h2>
         <p>$${item.price}</p>
-        <button class = "add">Add to cart</button>
+        <button class="add">Add to cart</button>
       </div>`)
 }
 
@@ -69,13 +68,15 @@ items.forEach((item) => inject(item))
 function filterCard(){
   const tabs = document.querySelectorAll("[data-category]")
   tabs.forEach(tab =>{
-    tab.addEventListener("click", () => {
-      document.querySelectorAll(".card").forEach(card => card.remove())
+    tab.addEventListener("click", () =>{
+      //document.querySelectorAll(".card").forEach(card => card.remove())
 
       const type = tab.getAttribute("data-category")
       if(type !== "all"){
-        const filtered = items.filter(item => item.type === type)
-        filtered.forEach(item => inject(item))
+        //const filtered = items.filter(item => item.type === type)
+        const filtered = document.querySelectorAll(`[data-type=${type}]`)
+        //filtered.forEach(item => document.getElementById(item).style.display = 'none')
+        //filtered.forEach(item => inject(item))
       }else{
         items.forEach((item) => inject(item))
       }
