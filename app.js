@@ -9,7 +9,7 @@ console.log(y);
 
 
 //string
-const zaddy = "Daddy Owen";
+const zaddy = "Owen";
 
 //integer
 const y = 56;
@@ -93,12 +93,3 @@ const numbs = [1,2,3,4,5,6,7,8,9,10];
 numbs.filter((num) => num % 2 === 0).forEach((n) => console.log(n));
 
 */
-
-const daddyowen = {
-    name: {
-        firstName: "Owen",
-        lastName: "Chen",
-    }
-};
-
-console.log(daddyowen.name.firstName)

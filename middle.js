@@ -103,8 +103,8 @@ books.forEach(title => {
 
 books.filter(book => book.year < 2020).forEach(book => console.log(book.title, book.year))
 */
-const btn = document.querySelector(".btn")
-console.log(btn)
+//const btn = document.querySelector(".btn")
+//console.log(btn)
 
 function getrgb() {
     const box = document.querySelector(".box")
@@ -114,4 +114,28 @@ function getrgb() {
     box.style.backgroundColor = `rgb(${r}, ${g}, ${b})`
 }
 
-btn.addEventListener("click", getrgb)
+//btn.addEventListener("click", getrgb)
+
+const cart = [
+  { name: "Apples", price: 3.5, quantity: 4 },
+  { name: "Milk", price: 4.75, quantity: 2 },
+  { name: "Steak", price: 15.99, quantity: 3 },
+  { name: "Cereal", price: 5.25, quantity: 1 },
+  { name: "Bananas", price: 1.25, quantity: 6 }
+]
+
+function cartCount(list){
+    let total = 0
+    list.forEach(item => {
+        if (item.price < 5){
+            total += item.price * item.quantity * 0.95
+        }else{
+            total += item.price * item.quantity
+        }
+    });
+    if(total > 100){
+        total = total * 0.9
+    }
+    return total
+}
+console.log(cartCount(cart))
