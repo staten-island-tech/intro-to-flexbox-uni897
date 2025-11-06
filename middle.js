@@ -160,8 +160,19 @@ const dnsRecords = [
   { address: "youtube.com", dns: "142.250.190.46" },
 ];
 
-function search(list){
+function search(list, target){
     let low = 0
-    let high = list.length
-    while(low != high)
+    let high = list.length - 1
+    while(low <= high){
+        let average = Math.floor((low + high) / 2)
+        if(list[average].address === target){
+            return list[average].dns
+        }else if(list[average].address[0] < target[0]){
+            return target
+        }else{
+            return "asd"
+        }
+    }
 }
+
+console.log(search(dnsRecords, "roblox.com"))
