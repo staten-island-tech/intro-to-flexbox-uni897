@@ -168,9 +168,9 @@ function search(list, target){
         if(list[average].address === target){
             return list[average].dns
         }else if(list[average].address[0] < target[0]){
-            return target
+            low = target[0].index
         }else{
-            return "asd"
+            high = list[average].index
         }
     }
 }
