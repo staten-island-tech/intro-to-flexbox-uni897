@@ -165,14 +165,17 @@ function search(list, target){
     let high = list.length - 1
     while(low <= high){
         let average = Math.floor((low + high) / 2)
-        if(list[average].address === target){
+        let current = list[average].address
+        
+        if(current === target){
             return list[average].dns
-        }else if(list[average].address[0] < target[0]){
-            low = target[0].index
+        }else if(current < target){
+            low = average + 1
         }else{
-            high = list[average].index
+            high = average - 1
         }
     }
+    return "DNS Not Found"
 }
 
-console.log(search(dnsRecords, "roblox.com"))
+console.log(search(dnsRecords, "chat.openai.com"))
