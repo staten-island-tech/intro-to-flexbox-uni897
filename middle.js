@@ -175,4 +175,40 @@ function search(list, target){
     }
 }
 
-console.log(search(dnsRecords, "roblox.com"))
+//console.log(search(dnsRecords, "roblox.com"))
+
+function brokenator(money, first, second, third){
+    let i = 1
+    while(money > 0){
+        money -= 1
+        if(i % 3 === 1){
+            first += 1
+            if((first % 35 === 0) && (first != 0)){
+                console.log("First:" + first)
+                first = 0
+                money += 30
+            }
+        }else if(i % 3 === 2){
+            second += 1
+            if((second % 100 === 0) && (second != 0)){
+                console.log("Second:" + second)
+                second = 0
+                money += 60
+            }
+        }else if(i % 3 === 0){
+            third += 1
+            if((third % 10 === 0) && (third != 0)){
+                console.log("Third:" + third)
+                third = 0
+                money += 9
+            }
+        }
+        i += 1
+        console.log(money)
+        if(i === 100){
+            break
+        }
+    }
+    return i - 1
+}
+console.log(brokenator(48, 3, 10, 4))
