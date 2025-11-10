@@ -178,4 +178,33 @@ function search(list, target){
     return "DNS Not Found"
 }
 
-console.log(search(dnsRecords, "chat.openai.com"))
+//console.log(search(dnsRecords, "chat.openai.com"))
+
+function brokeanator(q, first, second, third){
+    let i = 1
+    while(q > 0){
+        if(first % 3 === 1){
+            first += 1
+            if(first % 35 === 0){
+                q += 35
+                first = 0
+            }
+        }else if(second % 3 === 2){
+            second += 1
+            if(second % 100 === 0){
+                q += 60
+                second = 0
+            }
+        }else if(third % 3 === 0){
+            second += 1
+            if(second % 10 === 0){
+                q += 9
+                second = 0
+            }
+        }
+        i += 1
+    }
+    return q
+}
+
+console.log(brokeanator(48, 3, 10, 4))
