@@ -183,6 +183,7 @@ function search(list, target){
 function brokeanator(q, first, second, third){
     let i = 1
     while(q > 0){
+        q = q - 1
         if(first % 3 === 1){
             first += 1
             if(first % 35 === 0){
@@ -204,7 +205,7 @@ function brokeanator(q, first, second, third){
         }
         i += 1
     }
-    return q
+    return i
 }
 
 console.log(brokeanator(48, 3, 10, 4))
