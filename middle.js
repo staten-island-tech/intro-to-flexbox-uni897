@@ -180,11 +180,8 @@ function search(list, target){
 
 //console.log(search(dnsRecords, "chat.openai.com"))
 
-function brokeanator(q, f, s, t){
+function brokeanator(q, first, second, third){
     let i = 1
-    let first = f
-    let second = s
-    let third = t
     while(q > 0){
         q = q - 1
         if(i % 3 === 1){
@@ -211,4 +208,4 @@ function brokeanator(q, f, s, t){
     return i - 1
 }
 
-console.log(brokeanator(48, 3, 10, 4))
+console.log("Martha can play " + brokeanator(48, 3, 10, 4) + " times")
