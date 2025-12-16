@@ -207,5 +207,4 @@ function brokeanator(q, first, second, third){
     }
     return i - 1
 }
-
-console.log("Martha can play " + brokeanator(48, 3, 10, 4) + " times")
+//console.log("Martha can play " + brokeanator(48, 3, 10, 4) + " times")
